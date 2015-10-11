@@ -1,0 +1,4 @@
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:MapApp,org.eclipse.launchbar.core.descriptorType.default\:maps
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:MapApp/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:MapApp/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local

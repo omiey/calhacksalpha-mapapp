@@ -1,0 +1,13 @@
+INDEX VERSION 1.127+/home/tapomay/workspaces/calhacksWorkspace/.metadata/.plugins/org.eclipse.jdt.core
+3595607781.index
+835497818.index
+3364140305.index
+3918490065.index
+1415693123.index
+3742204320.index
+1469841804.index
+1486684054.index
+2213498516.index
+4041437351.index
+1765624659.index
+2976229855.index

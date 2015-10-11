@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MapApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+  <string name="my_location">My Location</string>
+  <string name="my_location_demo_label">My Location Demo</string>
+  <string name="my_location_demo_description">Demonstrates how to use GMS Location</string>
+  <string name="mylocation_button">My Location Button</string>
+  <string name="mylocation_layer">My Location Layer</string>
+    
+</resources>

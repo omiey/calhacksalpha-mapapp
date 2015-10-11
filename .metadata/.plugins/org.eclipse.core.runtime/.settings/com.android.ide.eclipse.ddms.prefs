@@ -1,0 +1,7 @@
+ddms.logcat.auotmonitor.level=error
+ddms.logcat.automonitor=false
+ddms.logcat.automonitor.userprompt=true
+devicePanel.Col0=236
+eclipse.preferences.version=1
+threadPanel.Col0=672
+threadPanel.stack.col0=654
