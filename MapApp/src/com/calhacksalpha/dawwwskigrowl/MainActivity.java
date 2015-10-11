@@ -1,7 +1,5 @@
 package com.calhacksalpha.dawwwskigrowl;
 
-import com.pubnub.api.Pubnub;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,12 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class MainActivity extends Activity {
-
-	private static final String PUB_KEY = "pub-c-d61a4887-c713-4a84-893a-401a26d932ce";
-
-	private static final String SUB_KEY = "sub-c-65b4c226-7000-11e5-81f9-0619f8945a4f";
-
-	private Pubnub pubnub = new Pubnub(PUB_KEY, SUB_KEY);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

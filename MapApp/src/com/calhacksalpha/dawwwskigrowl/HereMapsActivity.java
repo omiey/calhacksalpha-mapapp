@@ -3,10 +3,10 @@ package com.calhacksalpha.dawwwskigrowl;
 import java.io.IOException;
 import java.lang.ref.WeakReference;
 
+import com.calhacksalpha.dawwwskigrowl.data.LifeCycle;
 import com.calhacksalpha.dawwwskigrowl.data.LocationEntities;
 import com.calhacksalpha.dawwwskigrowl.data.User;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
+import com.calhacksalpha.dawwwskigrowl.data.UserEmailFetcher;
 import com.here.android.mpa.common.GeoCoordinate;
 import com.here.android.mpa.common.GeoPosition;
 import com.here.android.mpa.common.OnEngineInitListener;
@@ -16,12 +16,21 @@ import com.here.android.mpa.common.PositioningManager.LocationStatus;
 import com.here.android.mpa.common.PositioningManager.OnPositionChangedListener;
 import com.here.android.mpa.mapping.Map;
 import com.here.android.mpa.mapping.MapFragment;
+import com.pubnub.api.Pubnub;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
+import android.view.View;
 
 public class HereMapsActivity extends FragmentActivity {
+
+	private static final String PUB_KEY = "pub-c-d61a4887-c713-4a84-893a-401a26d932ce";
+
+	private static final String SUB_KEY = "sub-c-65b4c226-7000-11e5-81f9-0619f8945a4f";
+
+	private Pubnub pubnub = new Pubnub(PUB_KEY, SUB_KEY);
 
 	// map embedded in the map fragment
 	private Map map = null;
@@ -35,6 +44,8 @@ public class HereMapsActivity extends FragmentActivity {
 
 	private User mock;
 
+	private LifeCycle lifeCycle;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,6 +59,13 @@ public class HereMapsActivity extends FragmentActivity {
 					// retrieve a reference of the map from the map fragment
 					map = mapFragment.getMap();
 					locationEntities = new LocationEntities(map);
+					
+					String selfId = UserEmailFetcher.getEmail(getApplicationContext());
+					lifeCycle = new LifeCycle(pubnub, selfId , locationEntities);
+					
+					LifeCycle.setInstance(lifeCycle);
+					lifeCycle.initPrimary();
+					
 					map.getPositionIndicator().setVisible(true);
 
 					// Set the map center to the Vancouver region (no animation)
@@ -88,11 +106,13 @@ public class HereMapsActivity extends FragmentActivity {
 			if (!paused) {
 				map.setCenter(position.getCoordinate(), Map.Animation.NONE);
 
-				GeoCoordinate coordinate = position.getCoordinate();
-				coordinate.setLatitude(coordinate.getLatitude() + 0.1);
-				coordinate.setLongitude(coordinate.getLongitude() + 0.1);
-				locationEntities.updateLocation(mock.id, coordinate);
-				map.addMapObject(mock.myMapMarker);
+//				GeoCoordinate coordinate = position.getCoordinate();
+//				coordinate.setLatitude(coordinate.getLatitude() + 0.01);
+//				coordinate.setLongitude(coordinate.getLongitude() + 0.01);
+				locationEntities.updateLocation(mock.id, position.getCoordinate());
+				lifeCycle.updatePrimary(position.getCoordinate().getLatitude(),
+						position.getCoordinate().getLongitude());
+				//				map.addMapObject(mock.myMapMarker);
 			}
 		}
 
@@ -122,6 +142,11 @@ public class HereMapsActivity extends FragmentActivity {
 		PositioningManager.getInstance().removeListener(positionListener);
 		map = null;
 		super.onDestroy();
+	}
+	
+	public void forward3(View v) {
+		Intent intent = new Intent(this, InvitesActivity.class);
+		startActivity(intent);
 	}
 
 }
