@@ -38,7 +38,7 @@
     <fragment
         android:id="@+id/mapfragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         class="com.here.android.mpa.mapping.MapFragment" />
 
 </RelativeLayout>
