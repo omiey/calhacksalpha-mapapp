@@ -1,9 +1,0 @@
-package com.calhacksalpha.dawwwskigrowl.data;
-
-import com.here.android.mpa.common.GeoCoordinate;
-
-public interface LocationAware {
-	void drawLocations();
-
-	void updateLocation(GeoCoordinate coordinate);
-}

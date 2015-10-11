@@ -1,7 +1,0 @@
-package com.calhacksalpha.dawwwskigrowl.data;
-
-public class User {
-	MapMarker myMapMarker;
-	com.here.android.mpa.common.Image myImage;
-	
-}

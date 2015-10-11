@@ -32,13 +32,16 @@
         android:layout_below="@+id/button1"
         android:layout_marginTop="30dp"
         android:onClick="forward2"
-        android:text="Button" />
-    
-    <!-- Map Fragment embedded with the map object -->
-    <fragment
-        android:id="@+id/mapfragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        class="com.here.android.mpa.mapping.MapFragment" />
+        android:text="Button2" />
 
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_below="@+id/button2"
+        android:layout_marginTop="39dp"
+        android:onClick="forward3"
+        android:text="Button3" />
+    
 </RelativeLayout>

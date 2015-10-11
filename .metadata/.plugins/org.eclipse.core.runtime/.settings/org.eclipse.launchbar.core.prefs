@@ -1,4 +1,0 @@
-configDescList=org.eclipse.launchbar.core.descriptorType.default\:MapApp,org.eclipse.launchbar.core.descriptorType.default\:maps,org.eclipse.launchbar.core.descriptorType.default\:LiveSightRadarActivity,org.eclipse.launchbar.core.descriptorType.default\:LiveSightRadarActivity-src-com-here-android-tutorial-livesightradar-ARRadar.java,org.eclipse.launchbar.core.descriptorType.default\:RoutingActivity,org.eclipse.launchbar.core.descriptorType.default\:Venues3dActivity,org.eclipse.launchbar.core.descriptorType.default\:BasicMapActivity
-eclipse.preferences.version=1
-org.eclipse.launchbar.core.descriptorType.default\:MapApp/activeLaunchMode=run
-org.eclipse.launchbar.core.descriptorType.default\:MapApp/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local

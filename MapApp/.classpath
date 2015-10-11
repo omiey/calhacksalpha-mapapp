@@ -12,5 +12,6 @@
 	<classpathentry kind="lib" path="libs/jtlLibs/jts-1.13.jar"/>
 	<classpathentry kind="lib" path="libs/jtlLibs/jtsio-1.13.jar"/>
 	<classpathentry kind="lib" path="libs/gson-2.4.jar"/>
+	<classpathentry kind="lib" path="libs/Pubnub-Android-3.7.5.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
