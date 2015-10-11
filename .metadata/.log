@@ -3196,3 +3196,114 @@ java.net.UnknownHostException: dev.eclipse.org: Name or service not known
 
 !ENTRY org.eclipse.epp.logging.aeri.ui 2 6 2015-10-10 15:45:14.490
 !MESSAGE Failed to determine ETAG for remote problems database. Stopping update. Version: 1.0.0.v20150617-0732
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-10 18:50:52.264
+!MESSAGE Failed to load properties file for project 'LiveSightRadarActivity'
+
+!ENTRY org.eclipse.jdt.core 4 0 2015-10-10 18:53:05.504
+!MESSAGE Invalid ZIP archive: /MapApp/libs/HERE-sdk.jar.properties [in LiveSightRadarActivity]
+
+!ENTRY org.eclipse.jst.jsp.core 2 2 2015-10-10 18:53:06.592
+!MESSAGE Taglib Index ZipException: /home/tapomay/workspaces/calhacksWorkspace/MapApp/libs/HERE-sdk.jar.properties error in opening zip file
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-10 18:55:12.397
+!MESSAGE Failed to load properties file for project 'RoutingActivity'
+
+!ENTRY jdt.spelling 4 0 2015-10-10 19:10:28.491
+!MESSAGE Internal error 
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/LiveSightRadarActivity/src/com/here/android/tutorial/livesightradar/ARRadar.java' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:334)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:208)
+	at org.eclipse.core.internal.resources.Resource.deleteMarkers(Resource.java:822)
+	at jdt.spelling.marker.MarkerFactory.clear(MarkerFactory.java:68)
+	at jdt.spelling.processor.Processor.prepare(Processor.java:40)
+	at jdt.spelling.processor.Processor.access$0(Processor.java:39)
+	at jdt.spelling.processor.Processor$2.run(Processor.java:48)
+	at jdt.spelling.marker.MarkerJob.runInWorkspace(MarkerJob.java:29)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2015-10-10 19:10:28.493
+!MESSAGE Resource '/LiveSightRadarActivity/src/com/here/android/tutorial/livesightradar/ARRadar.java' does not exist.
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-10 19:11:07.939
+!MESSAGE Failed to load properties file for project 'LiveSightRadarActivity'
+
+!ENTRY org.eclipse.jdt.core 4 4 2015-10-10 19:20:32.096
+!MESSAGE JavaBuilder handling CoreException
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: /home/tapomay/workspaces/calhacksWorkspace/RoutingActivity/bin/classes/com/here/android/tutorial/simplerouting/RoutingActivity.class.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:49)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:391)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.jdt.internal.core.util.Util.getResourceContentsAsByteArray(Util.java:1135)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileCheck(IncrementalImageBuilder.java:889)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileContents(IncrementalImageBuilder.java:831)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.writeClassFile(AbstractImageBuilder.java:859)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.acceptResult(AbstractImageBuilder.java:190)
+	at org.eclipse.jdt.internal.compiler.Compiler.processCompiledUnits(Compiler.java:589)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:458)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:367)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.compile(IncrementalImageBuilder.java:330)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:304)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.build(IncrementalImageBuilder.java:135)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:267)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:195)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.io.FileNotFoundException: /home/tapomay/workspaces/calhacksWorkspace/RoutingActivity/bin/classes/com/here/android/tutorial/simplerouting/RoutingActivity.class (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	... 27 more
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2015-10-10 19:20:32.097
+!MESSAGE File not found: /home/tapomay/workspaces/calhacksWorkspace/RoutingActivity/bin/classes/com/here/android/tutorial/simplerouting/RoutingActivity.class.
+!STACK 0
+java.io.FileNotFoundException: /home/tapomay/workspaces/calhacksWorkspace/RoutingActivity/bin/classes/com/here/android/tutorial/simplerouting/RoutingActivity.class (No such file or directory)
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(FileInputStream.java:146)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:382)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:834)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:269)
+	at org.eclipse.jdt.internal.core.util.Util.getResourceContentsAsByteArray(Util.java:1135)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileCheck(IncrementalImageBuilder.java:889)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileContents(IncrementalImageBuilder.java:831)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.writeClassFile(AbstractImageBuilder.java:859)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.acceptResult(AbstractImageBuilder.java:190)
+	at org.eclipse.jdt.internal.compiler.Compiler.processCompiledUnits(Compiler.java:589)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:458)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:367)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.compile(IncrementalImageBuilder.java:330)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:304)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.build(IncrementalImageBuilder.java:135)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:267)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:195)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-10 19:23:55.707
+!MESSAGE Failed to load properties file for project 'Venues3dActivity'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2015-10-10 19:25:50.713
+!MESSAGE Failed to load properties file for project 'BasicMapActivity'

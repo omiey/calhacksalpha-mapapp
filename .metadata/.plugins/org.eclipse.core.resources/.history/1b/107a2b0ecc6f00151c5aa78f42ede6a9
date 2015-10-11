@@ -1,0 +1,11 @@
+package com.calhacksalpha.dawwwskigrowl.data;
+
+import java.util.List;
+
+public class LocationEntities implements LocationAware{
+	private List<LocationAware> entities;
+	
+	public void drawLocations() {
+		
+	}
+}
