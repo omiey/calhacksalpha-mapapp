@@ -1,0 +1,25 @@
+package com.calhacksalpha.dawwwskigrowl.data;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.here.android.mpa.common.GeoCoordinate;
+
+public class LocationEntities implements LocationAware {
+
+	private Map<User, LocationAware> entities = new HashMap<User, LocationAware>();
+
+	public void addEntity(LocationAware d) {
+		entities.add(d);
+	}
+
+	public void removeEntity(LocationAware d) {
+		entities.remove(d);
+	}
+
+	@Override
+	public void updateLocation(GeoCoordinate coordinate) {
+
+	}
+}

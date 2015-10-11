@@ -1,0 +1,20 @@
+package com.calhacksalpha.dawwwskigrowl.data;
+
+import java.util.List;
+
+public class LocationEntities implements Drawable {
+	private List<LocationAware> entities;
+	
+	public void drawLocations() {
+		for (LocationAware locationAware : entities) {
+			locationAware.getMarker();
+			map.addMapObject(myMapMarker);
+		}
+	}
+
+	@Override
+	public void drawLocation() {
+		// TODO Auto-generated method stub
+		
+	}
+}

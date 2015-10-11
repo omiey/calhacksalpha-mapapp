@@ -1,0 +1,31 @@
+package com.calhacksalpha.dawwwskigrowl.data;
+
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.here.android.mpa.common.GeoCoordinate;
+
+public class LocationEntities {
+
+	private Map<String, LocationAware> entities = new HashMap<String, LocationAware>();
+
+	public void addEntity(User d) {
+		entities.put(d.id, d);
+	}
+
+	public void removeEntity(User d) {
+		entities.remove(d);
+	}
+
+	public void updateLocation(String id, GeoCoordinate coordinate) {
+		LocationAware locationAware = entities.get(id);
+		locationAware.updateLocation(coordinate);
+	}
+
+	public User mock(double latitude, double longitude) throws IOException {
+		User ret = new User("someid", new GeoCoordinate(latitude+0.1, longitude+0.1));
+		entities.put(ret.id, ret);
+		return ret;
+	}
+}

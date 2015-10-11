@@ -1,0 +1,29 @@
+package com.calhacksalpha.dawwwskigrowl.data;
+
+import java.io.IOException;
+
+import com.here.android.mpa.common.GeoCoordinate;
+import com.here.android.mpa.common.Image;
+import com.here.android.mpa.mapping.MapMarker;
+
+import android.R;
+
+public class User implements LocationAware{
+	
+	private MapMarker myMapMarker;
+	private com.here.android.mpa.common.Image myImage;
+	
+	public User(GeoCoordinate coordinate) throws IOException {
+		myImage = new Image();
+		myImage.setImageResource(R.drawable.arrow_up_float);
+		myMapMarker = new MapMarker(coordinate, myImage);
+	}
+
+	@Override
+	public void drawLocations(GeoCoordinate coordinate) {
+		// TODO Auto-generated method stub
+		myMapMarker.setCoordinate(coordinate);
+	}
+	
+	
+}

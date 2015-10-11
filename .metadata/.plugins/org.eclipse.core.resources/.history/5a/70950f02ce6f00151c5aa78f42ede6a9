@@ -1,0 +1,5 @@
+package com.calhacksalpha.dawwwskigrowl.data;
+
+public interface Drawable {
+
+}

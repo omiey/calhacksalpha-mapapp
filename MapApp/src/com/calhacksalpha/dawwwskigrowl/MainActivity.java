@@ -1,7 +1,10 @@
 package com.calhacksalpha.dawwwskigrowl;
 
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 
+import com.calhacksalpha.dawwwskigrowl.data.LocationEntities;
+import com.calhacksalpha.dawwwskigrowl.data.User;
 import com.here.android.mpa.common.GeoCoordinate;
 import com.here.android.mpa.common.GeoPosition;
 import com.here.android.mpa.common.OnEngineInitListener;
@@ -15,6 +18,7 @@ import com.here.android.mpa.mapping.MapFragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -29,6 +33,9 @@ public class MainActivity extends Activity {
 
 	private Boolean paused = true;
 
+	private LocationEntities locationEntities;
+	private User mock;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -42,19 +49,28 @@ public class MainActivity extends Activity {
 				if (error == OnEngineInitListener.Error.NONE) {
 					// retrieve a reference of the map from the map fragment
 					map = mapFragment.getMap();
-
+					locationEntities = new LocationEntities(map);
 					map.getPositionIndicator().setVisible(true);
 
 					// Set the map center to the Vancouver region (no animation)
 					GeoPosition lastKnownPosition = PositioningManager.getInstance().getLastKnownPosition();
-					
+
 					map.setCenter(lastKnownPosition.getCoordinate(), Map.Animation.NONE);
 					// Set the zoom level to the average between min and max
-					map.setZoomLevel((map.getMaxZoomLevel() + map.getMinZoomLevel()) / 2);
+//					map.setZoomLevel((map.getMaxZoomLevel() + map.getMinZoomLevel()) / 2);
+					map.setZoomLevel(map.getMaxZoomLevel() * 0.8);
 
 					// Register positioning listener
 					PositioningManager.getInstance()
 							.addListener(new WeakReference<OnPositionChangedListener>(positionListener));
+
+					try {
+						mock = locationEntities.mock(lastKnownPosition.getCoordinate().getLatitude(),
+								lastKnownPosition.getCoordinate().getLongitude());
+						map.addMapObject(mock.myMapMarker);
+					} catch (IOException e) {
+						Log.e("", "", e);
+					}
 
 				} else {
 					System.out.println("ERROR: Cannot initialize Map Fragment");
@@ -72,6 +88,12 @@ public class MainActivity extends Activity {
 			// to reduce CPU consumption
 			if (!paused) {
 				map.setCenter(position.getCoordinate(), Map.Animation.NONE);
+
+				GeoCoordinate coordinate = position.getCoordinate();
+				coordinate.setLatitude(coordinate.getLatitude() + 0.1);
+				coordinate.setLongitude(coordinate.getLongitude() + 0.1);
+				locationEntities.updateLocation(mock.id, coordinate);
+				map.addMapObject(mock.myMapMarker);
 			}
 		}
 
@@ -107,7 +129,6 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(this, MyLocationDemoActivity.class);
 		startActivity(intent);
 	}
-	
 
 	// Resume positioning listener on wake up
 	public void onResume() {
@@ -119,7 +140,7 @@ public class MainActivity extends Activity {
 
 	// To pause positioning listener
 	public void onPause() {
-		if(null != map)
+		if (null != map)
 			PositioningManager.getInstance().stop();
 		super.onPause();
 		paused = true;
